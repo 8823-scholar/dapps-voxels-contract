@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  truffle:
+    image: 8823scholar/truffle
+    working_dir: /app
+    volumes:
+      - ./src:/app:cached
+    depends_on:
+      - ganache
+  ganache:
+    image: 8823scholar/ganache
+    ports:
+      - "8545:8545"
+    volumes:
+      - ganache-data:/var/ganache
+
+volumes:
+  ganache-data:
