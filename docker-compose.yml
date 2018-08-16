@@ -5,7 +5,7 @@ services:
     image: 8823scholar/truffle
     working_dir: /app
     volumes:
-      - ./src:/app:cached
+      - .:/app:cached
     depends_on:
       - ganache
   ganache:
